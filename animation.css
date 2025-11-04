@@ -1,0 +1,20 @@
+.pt {
+  display: none;
+}
+.en {
+  display: inline;
+}
+
+body:has(#portuguese:checked) .en {
+  display: none;
+}
+body:has(#portuguese:checked) .pt {
+  display: inline;
+}
+
+body:has(#english:checked) .en {
+  display: inline;
+}
+body:has(#english:checked) .pt {
+  display: none;
+}
