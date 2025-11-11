@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --text-color: #3d3d3d;
+}
+
+body {
+  background-image: url("assets/images/bgImage.png");
+  background-size: cover;
+  background-position:cover;
+  background-repeat: no-repeat;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  height: auto;
+
+}
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 10px 0 10px;
+  padding-left: 0;
+  width: 900px;
+}
+
+.global {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 0;
+  width: 96%;
+  height: 95px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 400;
+  padding-left: 30px;
+}
+
+.lang-buttons {
+  display: flex;
+  width: max-content;
+  background-color: white;
+  border-radius: 35px;
+  padding: 8px;
+  margin-top: 22px;
+}
+
+.lang-buttons input[type="radio"] {
+  display: none;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 17px;
+  font-size: 17px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.66);
+  transition: all 0.3s ease;
+}
+
+.lang-buttons input[type="radio"]:checked + .lang-btn {
+  background: linear-gradient(
+    92.81deg,
+    #a59fc3 -82.63%,
+    #542b81 -36.76%,
+    #dc379f 27.24%,
+    #f3a199 73.1%,
+    #faf6e8 113.63%
+  );
+  color: white;
+}
+
+.main-video {
+  padding: 0 20px;
+  width: 60%;
+}
+
+.video {
+  width: 100%;
+  height: 470px;
+}
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 30%;
+  padding-left: 4%;
+  margin-top: 1%;
+  
+}
+
+.qr-card {
+  background-color: #f9e7e7;
+  padding: 1px 120px;
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-image {
+  width: 220px;
+  height: 200px;
+}
+
+.create-text {
+  font-size: 30px;
+  font-weight: 100;
+  color: var(--text-color);
+  margin: 0px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  max-width: 600px;
+  height:1px;
+}
+
+
+.card {
+  background: #f9e7e7;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+}
+
+
+.big-card {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 250px;
+  height: 340px;
+}
+
+
+.middle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 300px;
+  height: 190px;
+}
+.small-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 300px;
+  height: 130px;
+
+}
+
+
+.gradient {
+  background: linear-gradient(
+    94.98deg,
+    #a59fc3 -29.68%,
+    #542b81 9.55%,
+    #dc379f 64.28%,
+    #f3a199 103.51%,
+    #faf6e8 138.17%
+  );
+
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+.card-icon {
+  width: 120px;
+  height: auto;
+  margin-bottom: 18px;
+}
+
+.card-text {
+  font-size: 12px;
+  color: #6f6f6f;
+  padding:10px 10px 10px 10px;
+  max-width:100%;
+  margin: 0;
+}
+
+.small-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #3f3f3f;
+  margin-bottom: 10px;
+  margin: 0;
+  margin-top: 15px;
+
+}
+
+.small-icon {
+  width: 24px;
+  height: 24px;
+  margin: 6px 0 12px 0;
+  
+}
+
+.small-text {
+  font-size: 12px;
+  color: #6f6f6f;
+  padding: 0 10px 10px  10px ;
+  margin: 0;
+  width:91%;
+}
+.discription {
+  font-size: 12px;
+  color: #6f6f6f;
+  padding: 0 10px 10px  10px ;
+  margin: 0;
+  width:91%;
+  margin-top: 3%;
+}
+
+.big-title {
+font-size: 24px;
+  color: #6f6f6f;
+  padding: 10px 0 0  0 ;
+  font-weight: 400;
+  margin: 0;
+}
+
+.highlight {
+  font-size: 16px;
+  color: #3f3f3f;
+  margin: 7px 0;
+}
+
+.card-image {
+  width: 190px;
+  min-height: 180px;
+  max-height: 200px;
+}
+.main-name {
+  width: 200px;
+}
+
+.vertical-line {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 37%;
+  width: 1px;
+  background-color: #d3b3d3;
+  z-index: 10;
+}
+
+
+
+.video-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 35px;
+  width:60%;
+}
+
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+
+.image-video {
+  width: 170px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.video-wrapper {
+  position: relative;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.video-card:hover .play-icon {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 1;
+}
+
+
+
+.video-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: #3a3a3a;
+  margin: 0;
+}
+
+
+
+
+.video-card.active .image-video {
+  border: 3px solid #c37be4;
+}
+
+
+.image-icon {
+  position: relative; 
+  display: inline-block; 
+}
+
+
+.main-icon {
+  position: absolute;
+  bottom:55px;
+  top:10px; 
+  right: 1px;
+  width: 50px;
+  height: 50px;
+}
