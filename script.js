@@ -6,7 +6,8 @@ document.querySelectorAll(".video-card").forEach((card) => {
 
 const translations = {
   en: {
-    title: "Click in one of the videos to get more details",
+    title: " in one of the videos to get more details",
+    gradient:"Click",
     create: "Create your AI extension",
     autopilot: "Autopilot",
     synergy: "Synergy 75x5",
@@ -14,7 +15,8 @@ const translations = {
     crm: "Smart-CRM",
   },
   pt: {
-    title: "Clique em um dos vídeos para obter mais detalhes",
+    title: " em um dos vídeos para obter mais detalhes",
+    gradient:"Clique",
     create: "Crie seu corretor de IA",
     autopilot: "Como funciona o piloto automático",
     synergy: "Symbiosis Autopilot™",

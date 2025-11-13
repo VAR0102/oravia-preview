@@ -524,7 +524,7 @@ body {
 
   .global {
     width: 96%;
-    height: 140px;
+    height: 100px;
   }
 
   .top-row {
@@ -534,7 +534,10 @@ body {
     width: 40%;
     max-width: 600px;
   }
+.title-phrase{
+  margin:0;
 
+}
   .card-text {
     padding: 0;
   }
@@ -588,7 +591,7 @@ body {
   .lang-buttons {
     border-radius: 35px;
     padding: 1px;
-    margin-top: 22px;
+    margin-top: 5px;
   }
   .lang-btn {
     padding: 5px 5px;
