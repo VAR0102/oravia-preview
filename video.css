@@ -338,9 +338,7 @@ body {
   right: 75%;
 }
 
-/*   sdvcacascascacacsaascasc*/
 
-/* Spinner */
 .spinner {
   width: 40px;
   height: 40px;
@@ -356,19 +354,19 @@ body {
   }
 }
 
-/* Hide helper */
+
 .hidden {
   display: none;
 }
 
-/* Video wrapper */
+
 .wrapper {
   position: relative;
   width: 100%;
   max-width: 60%;
 }
 
-/* Play icon overlay */
+
 .play {
   position: absolute;
   width: 70px;
