@@ -7,7 +7,7 @@ document.querySelectorAll(".video-card").forEach((card) => {
 const translations = {
   en: {
     title: " in one of the videos to get more details",
-    gradient:"Click",
+    gradient: "Click",
     create: "Create your AI extension",
     autopilot: "Autopilot",
     synergy: "Synergy 75x5",
@@ -16,7 +16,7 @@ const translations = {
   },
   pt: {
     title: " em um dos vídeos para obter mais detalhes",
-    gradient:"Clique",
+    gradient: "Clique",
     create: "Crie seu corretor de IA",
     autopilot: "Como funciona o piloto automático",
     synergy: "Symbiosis Autopilot™",
@@ -40,4 +40,3 @@ document
   .getElementById("portuguese")
   .addEventListener("change", () => changeLang("pt"));
 changeLang("en");
-

@@ -9,13 +9,11 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; 
+  background-attachment: fixed;
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   color: var(--text-color);
-
-
 }
 
 .top-row {
@@ -25,7 +23,6 @@ body {
   padding: 20px;
   padding-left: 0;
   height: 50px;
-
 }
 
 .title-phrase {
@@ -96,7 +93,9 @@ body {
   transform: translate(-50%, -50%);
   opacity: 0.85;
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 .play-icon:hover {
   transform: translate(-50%, -50%) scale(1.1);
@@ -113,10 +112,7 @@ body {
 
 .qr-card {
   background-color: #f9e7e7;
-  padding-left: 90px;
-  padding-right: 90px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 90px 10px 90px;
   border-radius: 20px;
   border: 1px solid #ffffff;
   display: flex;
@@ -155,7 +151,7 @@ body {
   border: none;
   border-radius: 25px;
   padding: 10px 17px;
-  font-size: 17px;
+  font-size: 20px;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.66);
   transition: all 0.3s ease;
@@ -208,10 +204,7 @@ body {
   }
 
   .qr-card {
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 80px 20px 20px 80px;
     border-radius: 16px;
   }
 
@@ -290,10 +283,7 @@ body {
   }
 
   .qr-card {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 10px 20px 10px;
     border-radius: 16px;
   }
 
@@ -369,10 +359,7 @@ body {
   }
 
   .qr-card {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 10px 20px 10px;
     border-radius: 16px;
   }
 
@@ -450,10 +437,7 @@ body {
   }
 
   .qr-card {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 10px 20px 10px;
     border-radius: 16px;
   }
 
@@ -466,7 +450,6 @@ body {
     font-size: 16px;
     min-width: max-content;
   }
-
 
   .vertical-line {
     right: 53%;

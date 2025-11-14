@@ -1,85 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="animation.css" />
     <title>Oracia</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="top-row">
-        <div class="gallery-title">
-            
-            <h2 class="title-phrase">
-                <span data-key="gradient" class="word"></span>
+      <div class="gallery-title">
+        <h2 class="title-phrase">
+          <span data-key="gradient" class="word"></span>
+          <span data-key="title"></span>
+        </h2>
+      </div>
+      <div class="vertical-line"></div>
+      <section class="right-panel">
+        <img src="assets/images/name.png" alt="name" class="main-name" />
 
-                <span  data-key="title"></span>
-         
-
-            </h2>
+        <div class="qr-card">
+          <img
+            id="qr-img"
+            src="assets/images/qr.png"
+            alt="QR code"
+            class="qr-image"
+          />
         </div>
+        <h3 class="create-text" data-key="create"></h3>
+        <div class="lang-buttons">
+          <input type="radio" id="portuguese" name="lang" />
+          <label for="portuguese" class="lang-btn">Portuguese 🇧🇷</label>
 
-        <div class="vertical-line"></div>
-
-        <section class="right-panel">
-            <img src="assets/images/name.png" alt="name" class="main-name"/>
-
-            <div class="qr-card">
-                <img id="qr-img" src="assets/images/qr.png" alt="QR code" class="qr-image" />
-            </div>
-
-            <h3 class="create-text" data-key="create"> </h3>
-
-            <div class="lang-buttons">
-                <input type="radio" id="portuguese" name="lang" />
-                <label for="portuguese" class="lang-btn">Portuguese 🇧🇷</label>
-
-                <input type="radio" id="english" name="lang" checked />
-                <label for="english" class="lang-btn">English 🇺🇸</label>
-            </div>
-        </section>
+          <input type="radio" id="english" name="lang" checked />
+          <label for="english" class="lang-btn">English 🇺🇸</label>
+        </div>
+      </section>
     </div>
-
     <section class="gallery">
-        
-        <div class="video-card" data-page="video.html" data-id="autopilot">
-            <div class="video-wrapper">
-                <img src="assets/images/videoImage.png" alt="video-preview" class="image-video" />
-                <img src="assets/icons/playIcon.svg" alt="Play Icon" class="play-icon" />
-            </div>
-            <p class="video-label" data-key="autopilot"></p>
+      <div class="video-card" data-page="video.html" data-id="autopilot">
+        <div class="video-wrapper">
+          <img
+            src="assets/images/videoImage.png"
+            alt="video-preview"
+            class="image-video"
+          />
+          <img
+            src="assets/icons/playIcon.svg"
+            alt="Play Icon"
+            class="play-icon"
+          />
         </div>
-
-        
-        <div class="video-card" data-page="video.html" data-id="synergy">
-            <div class="video-wrapper">
-                <img src="assets/images/videoImage.png" alt="video-preview" class="image-video" />
-                <img src="assets/icons/playIcon.svg" alt="Play Icon" class="play-icon" />
-            </div>
-            <p class="video-label" data-key="synergy"></p>
+        <p class="video-label" data-key="autopilot"></p>
+      </div>
+      <div class="video-card" data-page="video.html" data-id="synergy">
+        <div class="video-wrapper">
+          <img
+            src="assets/images/videoImage.png"
+            alt="video-preview"
+            class="image-video"
+          />
+          <img
+            src="assets/icons/playIcon.svg"
+            alt="Play Icon"
+            class="play-icon"
+          />
         </div>
-
-
-        <div class="video-card" data-page="video.html" data-id="ask">
-            <div class="video-wrapper">
-                <img src="assets/images/videoImage.png" alt="video-preview" class="image-video" />
-                <img src="assets/icons/playIcon.svg" alt="Play Icon" class="play-icon" />
-            </div>
-            <p class="video-label" data-key="ask"></p>
+        <p class="video-label" data-key="synergy"></p>
+      </div>
+      <div class="video-card" data-page="video.html" data-id="ask">
+        <div class="video-wrapper">
+          <img
+            src="assets/images/videoImage.png"
+            alt="video-preview"
+            class="image-video"
+          />
+          <img
+            src="assets/icons/playIcon.svg"
+            alt="Play Icon"
+            class="play-icon"
+          />
         </div>
-
-        
-        <div class="video-card" data-page="video.html" data-id="crm">
-            <div class="video-wrapper">
-                <img src="assets/images/videoImage.png" alt="video-preview" class="image-video" />
-                <img src="assets/icons/playIcon.svg" alt="Play Icon" class="play-icon" />
-            </div>
-            <p class="video-label" data-key="crm"></p>
+        <p class="video-label" data-key="ask"></p>
+      </div>
+      <div class="video-card" data-page="video.html" data-id="crm">
+        <div class="video-wrapper">
+          <img
+            src="assets/images/videoImage.png"
+            alt="video-preview"
+            class="image-video"
+          />
+          <img
+            src="assets/icons/playIcon.svg"
+            alt="Play Icon"
+            class="play-icon"
+          />
         </div>
+        <p class="video-label" data-key="crm"></p>
+      </div>
     </section>
-
     <script src="script.js"></script>
     <script src="video.js"></script>
-</body>
+  </body>
 </html>

@@ -1,11 +1,9 @@
-
-
 const data = {
   autopilot: {
     id: 1,
     title: "Autopilot",
     image: "/assets/images/brain.png",
-    mainicon:"/assets/icons/brainIcon.svg",
+    mainicon: "/assets/icons/brainIcon.svg",
     cardTitle: "Advanced Negotiation Engine",
     cardText:
       "Never type again - Let AI handle client conversation autometicaly",
@@ -20,7 +18,7 @@ const data = {
     id: 2,
     title: "Synergy 75x5",
     image: "/assets/images/light.png",
-    mainicon:"/assets/icons/lightIcon.svg",
+    mainicon: "/assets/icons/lightIcon.svg",
     cardTitle: "Real-Time Suggestion Model",
     cardText:
       "Adapts to price, emotion, and context — helping realtors close faster and smarter.",
@@ -36,7 +34,7 @@ const data = {
     id: 3,
     title: "Ask ORACIA",
     image: "/assets/images/question.png",
-    mainicon:"/assets/icons/questionIcon.svg",
+    mainicon: "/assets/icons/questionIcon.svg",
     cardTitle: "Remove Any Doubt",
     cardText:
       "Instant answers on listings, prices, or property details — right when you need them.",
@@ -52,7 +50,7 @@ const data = {
     id: 4,
     title: "Smart-CRM",
     image: "/assets/images/smart.png",
-    mainicon:"/assets/icons/smartIcon.svg",
+    mainicon: "/assets/icons/smartIcon.svg",
     cardTitle: "Smart CRM",
     cardText: "Automatic updating in your sales funnel, lead status and notes",
     gradient: "Automatic Updatest",
@@ -95,13 +93,15 @@ cards.forEach((card) => {
   });
 });
 
-document.querySelectorAll(".main-icon img").forEach(icon => icon.style.display = "none");
+document
+  .querySelectorAll(".main-icon img")
+  .forEach((icon) => (icon.style.display = "none"));
 
 const iconMap = {
   autopilot: "brain-icon",
   synergy: "light-icon",
   ask: "question-icon",
-  crm: "smart-icon"
+  crm: "smart-icon",
 };
 
 const videoIds = new URLSearchParams(window.location.search).get("video");
@@ -110,9 +110,33 @@ console.log("Current video ID:", videoIds);
 const iconId = iconMap[videoIds];
 if (iconId) document.getElementById(iconId).style.display = "block";
 
-  
-  
+const videoName = new URLSearchParams(window.location.search).get("video");
 
+const videos = {
+  autopilot: "assets/video/autopilot.mp4",
+  synergy: "assets/video/synergy.mp4",
+  ask: "assets/video/ask.mp4",
+  crm: "assets/video/smart.mp4",
+};
+
+const videoFile = videos[videoName];
+const videoEl = document.getElementById("video");
+const loader = document.getElementById("video-loader");
+const wrapper = document.getElementById("wrapper");
+const playIcon = document.getElementById("playIcon");
+
+videoEl.src = videoFile;
+
+videoEl.addEventListener("loadeddata", () => {
+  loader.classList.add("hidden");
+  wrapper.classList.remove("hidden");
+});
+
+playIcon.addEventListener("click", () => {
+  playIcon.style.display = "none";
+  videoEl.play();
+  videoEl.setAttribute("controls", true);
+});
 
 // const translation = {
 //     autopilot: {
@@ -255,4 +279,3 @@ if (iconId) document.getElementById(iconId).style.display = "block";
 //     },
 //   },
 // }
-
