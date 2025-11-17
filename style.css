@@ -3,6 +3,24 @@
 :root {
   --text-color: #3d3d3d;
 }
+.flex {
+  display: flex;
+}
+
+.content-start {
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.content-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.space {
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
 body {
   background-image: url("assets/images/bgImage.png");
@@ -17,9 +35,6 @@ body {
 }
 
 .top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   padding: 20px;
   padding-left: 0;
   height: 50px;
@@ -32,7 +47,6 @@ body {
   margin-top: 5px;
   width: max-content;
   padding-left: 10%;
-  display: flex;
   gap: 10px;
 }
 
@@ -60,7 +74,6 @@ body {
 }
 
 .video-card {
-  display: flex;
   flex-direction: column;
   position: relative;
 }
@@ -103,7 +116,6 @@ body {
 }
 
 .right-panel {
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
@@ -115,9 +127,6 @@ body {
   padding: 10px 90px 10px 90px;
   border-radius: 20px;
   border: 1px solid #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .qr-image {
@@ -133,25 +142,27 @@ body {
 }
 
 .lang-buttons {
-  display: flex;
   gap: 16px;
   margin-top: 50px;
   background-color: white;
-  padding: 9px 15px;
+  padding: 6px 12px;
   border-radius: 25px;
 }
 
+.lang-btn {
+  font-size: 14px;
+  padding: 8px 12px;
+}
 .lang-buttons input[type="radio"] {
   display: none;
 }
 
 .lang-btn {
-  display: flex;
   align-items: center;
   border: none;
   border-radius: 25px;
   padding: 10px 17px;
-  font-size: 20px;
+  font-size: 17px;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.66);
   transition: all 0.3s ease;
@@ -222,7 +233,6 @@ body {
     gap: 10px;
     padding: 6px 12px;
     margin-top: 30px;
-    min-width: max-content;
   }
 
   .lang-btn {
@@ -274,9 +284,6 @@ body {
     width: 60%;
   }
   .top-row {
-    display: flex;
-    justify-content: start;
-    align-items: flex-start;
     padding: 20px;
     padding-left: 0;
     height: 50px;
@@ -350,9 +357,6 @@ body {
     width: 60%;
   }
   .top-row {
-    display: flex;
-    justify-content: start;
-    align-items: flex-start;
     padding: 20px;
     padding-left: 0;
     height: 50px;
@@ -428,9 +432,6 @@ body {
     width: 60%;
   }
   .top-row {
-    display: flex;
-    justify-content: start;
-    align-items: flex-start;
     padding: 20px;
     padding-left: 0;
     height: 50px;

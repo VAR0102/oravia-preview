@@ -3,6 +3,31 @@
 :root {
   --text-color: #3d3d3d;
 }
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.direction {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.content-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.space {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 html,
 body {
   background-image: url("assets/images/bgImage.png");
@@ -16,25 +41,26 @@ body {
   padding-top: 0;
   height: auto;
 }
+
 .top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   padding: 10px 10px 0 0;
   width: 900px;
 }
 
 .global {
-  display: flex;
-  justify-content: space-between;
-  height: 95px;
+  height: 100px;
   width: 94%;
 }
 
 .title {
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 400;
-  padding-left: 30px;
+}
+
+.title-phrase {
+  max-width: 60%;
+  display: flex;
+  align-items: center;
 }
 .video {
   width: 100%;
@@ -42,8 +68,6 @@ body {
 }
 
 .lang-buttons {
-  display: flex;
-  width: max-content;
   background-color: white;
   border-radius: 35px;
   padding: 8px;
@@ -55,7 +79,6 @@ body {
 }
 
 .lang-btn {
-  display: flex;
   align-items: center;
   border: none;
   border-radius: 25px;
@@ -79,9 +102,6 @@ body {
 }
 
 .right-panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 15px;
   width: 30%;
   padding-left: 4%;
@@ -93,9 +113,6 @@ body {
   padding: 1px 120px;
   border-radius: 20px;
   border: 1px solid #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .qr-image {
@@ -111,7 +128,6 @@ body {
 }
 
 .cards-container {
-  display: grid;
   grid-template-columns: 1fr 180px;
   grid-template-rows: 1fr 1fr;
   gap: 20px;
@@ -127,27 +143,15 @@ body {
 
 .big-card {
   grid-row: 1 / 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   width: 250px;
-  height: 340px;
+  height: 350px;
 }
 
 .middle-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   max-width: 300px;
-  height: 190px;
+  height: 200px;
 }
 .small-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   max-width: 300px;
   height: 130px;
 }
@@ -182,7 +186,7 @@ body {
 .card-text {
   font-size: 11px;
   color: #6f6f6f;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 0x 10px 10px;
   max-width: 100%;
   margin: 0;
 }
@@ -210,7 +214,7 @@ body {
   width: 91%;
 }
 .discription {
-  font-size: 12px;
+  font-size: 10px;
   color: #6f6f6f;
   padding: 0 10px 10px 10px;
   margin: 0;
@@ -219,7 +223,7 @@ body {
 }
 
 .big-title {
-  font-size: 24px;
+  font-size: 20px;
   color: #6f6f6f;
   padding: 10px 0 0 0;
   font-weight: 400;
@@ -252,17 +256,10 @@ body {
 }
 
 .video-carousel {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   width: 60%;
 }
 
 .video-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -283,8 +280,8 @@ body {
 
 .play-icon {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 40%;
   width: 40px;
   height: 40px;
   transform: translate(-50%, -50%);
@@ -300,14 +297,23 @@ body {
 }
 
 .video-label {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 400;
   color: #3a3a3a;
   margin: 0;
 }
 
 .video-card.active .image-video {
-  border: 3px solid #c37be4;
+  border: 2px solid transparent;
+  border-image-source: linear-gradient(
+    92.35deg,
+    #a59fc3 -94.27%,
+    #542b81 -42.42%,
+    #dc379f 29.93%,
+    #f3a199 81.78%,
+    #faf6e8 127.6%
+  );
+  border-image-slice: 1;
 }
 
 .image-icon {
@@ -338,7 +344,6 @@ body {
   right: 75%;
 }
 
-
 .spinner {
   width: 40px;
   height: 40px;
@@ -354,18 +359,15 @@ body {
   }
 }
 
-
 .hidden {
   display: none;
 }
-
 
 .wrapper {
   position: relative;
   width: 100%;
   max-width: 60%;
 }
-
 
 .play {
   position: absolute;
@@ -382,6 +384,25 @@ body {
 .play-icon:hover {
   transform: translate(-50%, -50%) scale(1.1);
 }
+@media (min-width: 1501px) {
+  .top-row {
+    width: 90%;
+    flex: 1 0 100%;
+    max-width: none;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header,
+  header > .top-row {
+    min-width: 950px;
+    width: 90%;
+
+    box-sizing: border-box;
+  }
+}
 
 @media (min-width: 1001px) and (max-width: 1500px) {
   .video-carousel {
@@ -390,7 +411,7 @@ body {
   }
 
   .image-video {
-    width: 90%;
+    width: 70%;
   }
   .play {
     width: 60px;
@@ -400,13 +421,17 @@ body {
   .global {
     width: 96%;
     padding: 0 2%;
+    height: 135px;
     transition: all 0.3s ease;
   }
 
+  .discription {
+    font-size: 11px;
+  }
+  .title {
+    width: 270px;
+  }
   .top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px 2%;
     width: 100%;
     max-width: 54%;
@@ -418,21 +443,18 @@ body {
 
   .video {
     width: 100%;
-    max-width: 95%;
+    max-width: 85%;
   }
 
   .vertical-line {
     position: absolute;
-    right: 40%;
+    right: 44%;
     width: 1px;
     background-color: #d3b3d3;
   }
   .right-panel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 15px;
-    width: 40%;
+    width: 43%;
     padding: 0;
     margin-top: 1%;
   }
@@ -442,32 +464,28 @@ body {
     padding: 1px 70px;
     border-radius: 20px;
     border: 1px solid #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .cards-container {
-    display: grid;
-    grid-template-columns: 1fr 130px;
+    grid-template-columns: 1fr 200px;
     grid-template-rows: 1fr 1fr;
     gap: 20px;
-    max-width: 600px;
+    max-width: 100%;
     height: 1px;
   }
 
   .big-card {
-    width: 200px;
-    height: 340px;
+    width: 240px;
   }
 
   .middle-card {
     max-width: 150px;
-    height: 190px;
   }
   .small-card {
-    max-width: 150px;
-    height: 130px;
+    max-width: 80%;
+  }
+  .big-title {
+    font-size: 16px;
   }
 }
 
@@ -475,6 +493,9 @@ body {
   .video-carousel {
     width: 35%;
     padding-left: 2%;
+  }
+  .big-title {
+    font-size: 16px;
   }
 
   .image-video {
@@ -487,7 +508,7 @@ body {
   }
   .global {
     width: 96%;
-    height: 110px;
+    height: 130px;
   }
 
   .top-row {
@@ -510,12 +531,12 @@ body {
 
   .vertical-line {
     position: absolute;
-    right: 50%;
+    right: 53%;
     width: 1px;
   }
   .right-panel {
     gap: 15px;
-    width: 42%;
+    width: 51%;
     padding: 0;
     margin-top: 1%;
   }
@@ -525,28 +546,26 @@ body {
   }
 
   .cards-container {
-    grid-template-columns: 1fr 150px;
-    max-width: 600px;
+    grid-template-columns: 1fr 190px;
+    max-width: 100%;
     height: 1px;
   }
 
   .big-card {
-    width: 190px;
-    height: 340px;
+    width: 240px;
   }
 
   .middle-card {
     max-width: 150px;
-    height: 190px;
   }
   .small-card {
     max-width: 150px;
-    height: 130px;
   }
 
   .lang-buttons {
     border-radius: 35px;
-    padding: 1px;
+    width: 100%;
+    padding: 5px 1px;
     margin-top: 22px;
   }
   .lang-btn {
@@ -567,17 +586,25 @@ body {
 
 @media (min-width: 600px) and (max-width: 799px) {
   .video-carousel {
-    width: 35%;
-    padding-left: 2%;
+    width: 1px;
+    padding-left: 0;
   }
 
   .image-video {
-    width: 90%;
+    width: 100%;
   }
-
+  .video-label {
+    font-size: 11px;
+  }
+  .big-title {
+    font-size: 16px;
+  }
+  .video-wrapper {
+    width: 30px;
+  }
   .global {
     width: 96%;
-    height: 100px;
+    height: 180px;
   }
   .play {
     width: 40px;
@@ -587,7 +614,6 @@ body {
 
   .top-row {
     display: grid;
-
     padding: 10px 2%;
     width: 40%;
     max-width: 600px;
@@ -632,22 +658,20 @@ body {
 
   .big-card {
     width: 190px;
-    height: 340px;
   }
 
   .middle-card {
     max-width: 150px;
-    height: 190px;
   }
   .small-card {
     max-width: 150px;
-    height: 130px;
   }
 
   .lang-buttons {
     border-radius: 35px;
-    padding: 1px;
+    padding: 5px;
     margin-top: 5px;
+    width: 60%;
   }
   .lang-btn {
     padding: 5px 5px;
@@ -655,6 +679,7 @@ body {
 
   .title {
     font-size: 22px;
+    width: 220px;
   }
   .play-icon {
     position: absolute;
@@ -665,20 +690,22 @@ body {
   }
   .lang-btn {
     padding: 2px 2px;
-    font-size: 17px;
+    font-size: 10px;
   }
 }
 
 @media (min-width: 505px) and (max-width: 599px) {
   .video-carousel {
     width: 20%;
-    padding-left: 2%;
+    padding-left: 0;
   }
 
   .image-video {
     width: 100%;
   }
-
+  .big-title {
+    font-size: 16px;
+  }
   .video-label {
     font-size: 8px;
   }
@@ -700,12 +727,11 @@ body {
 
   .global {
     width: 96%;
-    height: 100px;
+    height: 130px;
   }
 
   .top-row {
     display: grid;
-
     padding: 5px 2%;
     width: 40%;
     max-width: 600px;
@@ -713,7 +739,7 @@ body {
 
   .video {
     width: 40%;
-    height: 200px;
+    height: 100px;
   }
 
   .vertical-line {
@@ -757,16 +783,17 @@ body {
 
   .lang-buttons {
     display: grid;
-    border-radius: 35px;
-    padding: 1px;
+    padding: 1px 1px;
     margin-top: 0;
+    width: 60%;
   }
   .lang-btn {
-    padding: 2px 2px;
+    padding: 1px 1px;
+    font-size: 10px;
   }
 
   .title {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .play-icon {
@@ -783,7 +810,9 @@ body {
     width: 20%;
     padding-left: 0;
   }
-
+  .big-title {
+    font-size: 16px;
+  }
   .image-video {
     width: 100%;
   }
@@ -804,12 +833,11 @@ body {
 
   .global {
     width: 96%;
-    height: 100px;
+    height: 150px;
   }
 
   .top-row {
     display: grid;
-
     padding: 5px 2%;
     width: 40%;
     max-width: 600px;
@@ -825,7 +853,6 @@ body {
 
   .video {
     width: 35%;
-    height: 150px;
   }
   .play {
     width: 20px;
@@ -835,71 +862,68 @@ body {
 
   .vertical-line {
     position: absolute;
-    right: 75%;
+    right: 76%;
     width: 1px;
   }
   .right-panel {
     gap: 15px;
-    width: 70%;
+    width: 72%;
     padding: 0;
     margin-top: 1%;
   }
-  .big-title {
-    font-size: 21px;
-  }
+
   .qr-card {
     padding: 1px 40px;
   }
 
   .cards-container {
-    grid-template-columns: 1fr 140px;
+    grid-template-columns: 1fr 150px;
     max-width: 600px;
     height: 1px;
   }
 
   .big-card {
     width: 190px;
-    height: 340px;
   }
 
   .middle-card {
     max-width: 150px;
-    height: 190px;
   }
-  .small-card {
-    max-width: 150px;
-    height: 130px;
-  }
+
   .title-phrase {
     margin: 0;
   }
 
   .lang-buttons {
     display: grid;
-    border-radius: 35px;
-    padding: 1px;
+    padding: 1px 1px;
     margin-top: 0;
+    width: 60%;
   }
   .lang-btn {
-    padding: 2px 2px;
-    font-size: 13px;
+    padding: 1px 1px;
+    font-size: 10px;
   }
 
   .title {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 460px) {
   .video-carousel {
-    width: 10%;
-    padding-left: 0;
+    width: 5%;
+    display: grid;
+  }
+
+  .big-title {
+    font-size: 12px;
   }
 
   .image-video {
+    padding-left: 10%;
     width: 100%;
   }
-
   .video-label {
     font-size: 5px;
   }
@@ -916,12 +940,11 @@ body {
 
   .global {
     width: 96%;
-    height: 100px;
+    height: 120px;
   }
 
   .top-row {
     display: grid;
-
     padding: 5px 2%;
     width: 40%;
     max-width: 600px;
@@ -937,7 +960,6 @@ body {
 
   .video {
     width: 15%;
-    height: 150px;
   }
   .play {
     width: 10px;
@@ -951,19 +973,17 @@ body {
   }
   .right-panel {
     gap: 15px;
-    width: 70%;
+    width: 72%;
     padding: 0;
     margin-top: 1%;
   }
-  .big-title {
-    font-size: 21px;
-  }
+
   .qr-card {
     padding: 1px 40px;
   }
 
   .cards-container {
-    grid-template-columns: 1fr 140px;
+    grid-template-columns: 1fr 150px;
     max-width: 600px;
     height: 1px;
   }
@@ -987,16 +1007,18 @@ body {
 
   .lang-buttons {
     display: grid;
-    border-radius: 35px;
+    border-radius: 1px;
     padding: 1px;
+    width: 40%;
     margin-top: 0;
   }
   .lang-btn {
     padding: 2px 2px;
-    font-size: 8px;
+    border-radius: 15px;
+    font-size: 10px;
   }
 
   .title {
-    font-size: 10px;
+    font-size: 8px;
   }
 }
