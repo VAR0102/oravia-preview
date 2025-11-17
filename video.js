@@ -86,14 +86,13 @@ const params = new URLSearchParams(window.location.search);
 const videoId = params.get("video");
 populateVideo(videoId);
 
-const cards = document.querySelectorAll(".video-card");
-
-cards.forEach((card) => {
-  card.addEventListener("click", () => {
-    cards.forEach((c) => c.classList.remove("active"));
-    card.classList.add("active");
+document.querySelectorAll(".video-card").forEach((card) => {
+    if (card.dataset.id === videoId) {
+      card.classList.add("active");
+    } else {
+      card.classList.remove("active");
+    }
   });
-});
 
 document
   .querySelectorAll(".main-icon img")
