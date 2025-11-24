@@ -39,8 +39,7 @@ body {
 }
 
 .fixed {
-  position:  fixed;
-
+  position: fixed;
 }
 
 .absolute {
@@ -92,7 +91,6 @@ body {
 
 .video-card {
   flex-direction: column;
-
 }
 .video-wrapper {
   display: inline-block;
@@ -450,7 +448,7 @@ body {
   }
 
   .qr-card {
-    padding: 20px 10px ;
+    padding: 20px 10px;
     border-radius: 16px;
   }
 

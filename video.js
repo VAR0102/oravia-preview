@@ -87,12 +87,12 @@ const videoId = params.get("video");
 CurrentVideo(videoId);
 
 document.querySelectorAll(".video-card").forEach((card) => {
-    if (card.dataset.id === videoId) {
-      card.classList.add("active");
-    } else {
-      card.classList.remove("active");
-    }
-  });
+  if (card.dataset.id === videoId) {
+    card.classList.add("active");
+  } else {
+    card.classList.remove("active");
+  }
+});
 
 document
   .querySelectorAll(".main-icon img")

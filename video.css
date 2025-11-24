@@ -46,18 +46,16 @@ body {
 }
 
 .fixed {
-  position:  fixed;
-
+  position: fixed;
 }
 
-.align-center{
-align-items: center;
+.align-center {
+  align-items: center;
 }
 
 .absolute {
   position: absolute;
 }
-
 
 .top-row {
   padding: 10px 10px 0 0;
@@ -273,8 +271,8 @@ align-items: center;
 
 .video-card {
   transition:
-  transform 0.3s ease,
-  box-shadow 0.3s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -322,8 +320,6 @@ align-items: center;
   );
   border-image-slice: 1;
 }
-
-
 
 .brain-icon {
   top: 5%;
@@ -839,7 +835,7 @@ align-items: center;
   }
 
   .play-icon {
-    top:20%;
+    top: 20%;
     left: 50%;
     width: 10px;
     height: 10px;
