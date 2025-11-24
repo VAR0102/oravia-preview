@@ -41,6 +41,23 @@ body {
   padding-top: 0;
   height: auto;
 }
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position:  fixed;
+
+}
+
+.align-center{
+align-items: center;
+}
+
+.absolute {
+  position: absolute;
+}
+
 
 .top-row {
   padding: 10px 10px 0 0;
@@ -59,8 +76,6 @@ body {
 
 .title-phrase {
   max-width: 60%;
-  display: flex;
-  align-items: center;
 }
 .video {
   width: 100%;
@@ -79,7 +94,6 @@ body {
 }
 
 .lang-btn {
-  align-items: center;
   border: none;
   border-radius: 25px;
   padding: 10px 17px;
@@ -165,7 +179,6 @@ body {
     #f3a199 103.51%,
     #faf6e8 138.17%
   );
-
   background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0;
@@ -246,7 +259,6 @@ body {
 }
 
 .vertical-line {
-  position: fixed;
   top: 0;
   bottom: 0;
   right: 37%;
@@ -261,8 +273,8 @@ body {
 
 .video-card {
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transform 0.3s ease,
+  box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -274,12 +286,7 @@ body {
     box-shadow 0.3s ease;
 }
 
-.video-wrapper {
-  position: relative;
-}
-
 .play-icon {
-  position: absolute;
   top: 40%;
   left: 40%;
   width: 40px;
@@ -316,30 +323,24 @@ body {
   border-image-slice: 1;
 }
 
-.image-icon {
-  position: relative;
-}
+
 
 .brain-icon {
-  position: absolute;
   top: 5%;
   right: 1%;
 }
 
 .light-icon {
-  position: absolute;
   top: 40%;
   right: 35%;
 }
 
 .question-icon {
-  position: absolute;
   top: 15%;
   left: 70%;
 }
 
 .smart-icon {
-  position: absolute;
   top: 20%;
   right: 75%;
 }
@@ -364,13 +365,11 @@ body {
 }
 
 .wrapper {
-  position: relative;
   width: 100%;
   max-width: 60%;
 }
 
 .play {
-  position: absolute;
   width: 70px;
   height: 70px;
   top: 50%;
@@ -391,7 +390,6 @@ body {
     max-width: none;
     box-sizing: border-box;
     padding: 10px 20px;
-    align-items: center;
     justify-content: space-between;
   }
 
@@ -576,8 +574,7 @@ body {
     font-size: 22px;
   }
   .play-icon {
-    position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     width: 20px;
     height: 20px;
@@ -682,8 +679,7 @@ body {
     width: 220px;
   }
   .play-icon {
-    position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     width: 20px;
     height: 20px;
@@ -797,8 +793,7 @@ body {
   }
 
   .play-icon {
-    position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     width: 10px;
     height: 10px;
@@ -844,8 +839,7 @@ body {
   }
 
   .play-icon {
-    position: absolute;
-    top: 50%;
+    top:20%;
     left: 50%;
     width: 10px;
     height: 10px;
@@ -951,8 +945,7 @@ body {
   }
 
   .play-icon {
-    position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     width: 10px;
     height: 10px;

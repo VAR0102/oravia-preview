@@ -10,21 +10,21 @@
     <div class="flex space global">
       <header>
         <div class="flex space top-row">
-          <h2 class="title-phrase">
+          <h2 class="flex align-center title-phrase">
             <span class="title" id="card-title" data-key="title"
               >Autopilot</span
             >
           </h2>
           <div class="flex lang-buttons">
             <input type="radio" id="portuguese" name="lang" />
-            <label for="portuguese" class="flex lang-btn">Português 🇧🇷</label>
+            <label for="portuguese" class="flex  align-center lang-btn">Português 🇧🇷</label>
 
             <input type="radio" id="english" name="lang" checked />
-            <label for="english" class="flex lang-btn">English 🇺🇸</label>
+            <label for="english" class="flex  align-center lang-btn">English 🇺🇸</label>
           </div>
         </div>
       </header>
-      <div class="vertical-line"></div>
+      <div class="fixed vertical-line"></div>
       <section class="flex direction right-panel">
         <img src="assets/images/name.png" alt="name" class="main-name" />
 
@@ -42,34 +42,34 @@
                 >Advanced Negotiation Engine</span
               >
             </h2>
-            <div class="image-icon">
+            <div class="relative image-icon">
               <img alt="brain" class="card-image" id="main-image" />
 
               <div class="main-icon">
                 <img
                   id="brain-icon"
-                  class="brain-icon"
+                  class="absolute brain-icon"
                   id="brain-icon"
                   src="assets/icons/brainIcon.svg"
                   alt="brain icon"
                 />
                 <img
                   id="light-icon"
-                  class="light-icon"
+                  class="absolute light-icon"
                   id="light-icon"
                   src="assets/icons/lightIcon.svg"
                   alt="light icon"
                 />
                 <img
                   id="question-icon"
-                  class="question-icon"
+                  class="absolute question-icon"
                   id="question-icon"
                   src="assets/icons/questionIcon.svg"
                   alt="question icon"
                 />
                 <img
                   id="smart-icon"
-                  class="smart-icon"
+                  class="absolute smart-icon"
                   id="smart-icon"
                   src="assets/icons/smartIcon.svg"
                   alt="smart icon"
@@ -121,7 +121,7 @@
         <p>Loading video...</p>
       </div>
 
-      <div id="wrapper" class="wrapper hidden">
+      <div id="wrapper" class="relative  wrapper hidden">
         <video
           class="video"
           id="video"
@@ -129,13 +129,13 @@
           playsinline
           muted
         ></video>
-        <img src="assets/icons/playIcon.svg" id="playIcon" class="play" />
+        <img src="assets/icons/playIcon.svg" id="playIcon" class="absolute play" />
       </div>
     </section>
 
     <section class="flex space video-carousel">
       <div
-        class="flex direction video-card"
+        class="flex direction relative video-card"
         data-title="autopilot"
         data-id="autopilot"
       >
@@ -145,43 +145,43 @@
             alt="video"
             class="image-video"
           />
-          <img src="assets/icons/playIcon.svg" alt="play" class="play-icon" />
+          <img src="assets/icons/playIcon.svg" alt="play" class="absolute play-icon" />
         </div>
         <p class="video-label" data-key="autopilot">Autopilot</p>
       </div>
 
-      <div class="video-card" data-title="synergy" data-id="synergy">
+      <div class="relative video-card" data-title="synergy" data-id="synergy">
         <div class="video-wrapper">
           <img
             src="assets/images/videoImage.png"
             alt="video"
             class="image-video"
           />
-          <img src="assets/icons/playIcon.svg" alt="play" class="play-icon" />
+          <img src="assets/icons/playIcon.svg" alt="play" class="absolute play-icon" />
         </div>
         <p class="video-label" data-key="synergy">Synergy 75x5</p>
       </div>
 
-      <div class="video-card" data-title="ask" data-id="ask">
+      <div class="relative video-card" data-title="ask" data-id="ask">
         <div class="video-wrapper">
           <img
             src="assets/images/videoImage.png"
             alt="video"
             class="image-video"
           />
-          <img src="assets/icons/playIcon.svg" alt="play" class="play-icon" />
+          <img src="assets/icons/playIcon.svg" alt="play" class="absolute play-icon" />
         </div>
         <p class="video-label" data-key="ask">Ask ORACIA</p>
       </div>
 
-      <div class="video-card" data-title="crm" data-id="crm">
+      <div class=" relative video-card" data-title="crm" data-id="crm">
         <div class="video-wrapper">
           <img
             src="assets/images/videoImage.png"
             alt="video"
             class="image-video"
           />
-          <img src="assets/icons/playIcon.svg" alt="play" class="play-icon" />
+          <img src="assets/icons/playIcon.svg" alt="play" class="absolute play-icon" />
         </div>
         <p class="video-label">Smart-CRM</p>
       </div>

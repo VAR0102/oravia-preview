@@ -68,7 +68,7 @@ document.querySelectorAll(".video-card").forEach((card) => {
   });
 });
 
-function populateVideo(id) {
+function CurrentVideo(id) {
   const change = data[id];
   document.getElementById("card-title").textContent = change.title;
   document.getElementById("main-image").src = change.image;
@@ -84,7 +84,7 @@ function populateVideo(id) {
 
 const params = new URLSearchParams(window.location.search);
 const videoId = params.get("video");
-populateVideo(videoId);
+CurrentVideo(videoId);
 
 document.querySelectorAll(".video-card").forEach((card) => {
     if (card.dataset.id === videoId) {
@@ -105,17 +105,15 @@ const iconMap = {
   crm: "smart-icon",
 };
 
-const videoIds = new URLSearchParams(window.location.search).get("video");
-const iconId = iconMap[videoIds];
+const iconId = iconMap[videoId];
 if (iconId) document.getElementById(iconId).style.display = "block";
-const videoName = new URLSearchParams(window.location.search).get("video");
 const videos = {
   autopilot: "assets/video/autopilot.mp4",
   synergy: "assets/video/synergy.mp4",
   ask: "assets/video/ask.mp4",
   crm: "assets/video/smart.mp4",
 };
-const videoFile = videos[videoName];
+const videoFile = videos[videoId];
 const videoEl = document.getElementById("video");
 const loader = document.getElementById("video-loader");
 const wrapper = document.getElementById("wrapper");
@@ -303,7 +301,7 @@ const textKeys = [
 ];
 
 function updateLanguage(lang) {
-  const currentVideo = videoName;
+  const currentVideo = videoId;
 
   textKeys.forEach((key) => {
     const element = document.querySelector(`[data-key="${key}"]`);
