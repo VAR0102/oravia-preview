@@ -2,6 +2,7 @@ const data = {
   autopilot: {
     id: 1,
     title: "Autopilot",
+    create: "Create your AI extension",
     image: "/assets/images/brain.png",
     mainicon: "/assets/icons/brainIcon.svg",
     cardTitle: "Advanced Negotiation Engine",
@@ -17,6 +18,7 @@ const data = {
   synergy: {
     id: 2,
     title: "Synergy 75x5",
+    create: "Create your AI extension",
     image: "/assets/images/light.png",
     mainicon: "/assets/icons/lightIcon.svg",
     cardTitle: "Real-Time Suggestion Model",
@@ -33,6 +35,7 @@ const data = {
   ask: {
     id: 3,
     title: "Ask ORACIA",
+    create: "Create your AI extension",
     image: "/assets/images/question.png",
     mainicon: "/assets/icons/questionIcon.svg",
     cardTitle: "Remove Any Doubt",
@@ -49,6 +52,7 @@ const data = {
   crm: {
     id: 4,
     title: "Smart-CRM",
+    create: "Create your AI extension",
     image: "/assets/images/smart.png",
     mainicon: "/assets/icons/smartIcon.svg",
     cardTitle: "Smart CRM",
@@ -72,7 +76,9 @@ function CurrentVideo(id) {
   const change = data[id];
   document.getElementById("card-title").textContent = change.title;
   document.getElementById("main-image").src = change.image;
+
   document.getElementById("big-card-title").textContent = change.cardTitle;
+  document.getElementById("create").textContent = change.create;
   document.getElementById("big-card-text").textContent = change.cardText;
   document.getElementById("middle-gradient").textContent = change.gradient;
   document.getElementById("middle-icon").src = change.icon;
@@ -137,6 +143,7 @@ const translation = {
     en: {
       video: "/assets/video/autopilot.mp4",
       title: "Autopilot",
+      create: "Create your AI extension",
       cardTitle: "Advanced Negotiation Engine",
       cardText:
         "Never type again - Let AI handle client conversation autometicaly",
@@ -154,6 +161,7 @@ const translation = {
     pt: {
       video: "/assets/video/autopilotPort.mp4",
       title: "Como funciona o piloto automático",
+      create: "Crie sua extensão IA",
       cardTitle: "Modelo de Negociação Avançada",
       cardText:
         "“Menos digitação mais vendas - Conte com eficiência assistida para desenvolver suas conversas com clientes”",
@@ -173,6 +181,7 @@ const translation = {
     en: {
       video: "assets/video/Synergy.mp4",
       title: "Synergy 75x5",
+      create: "Create your AI extension",
       cardTitle: "Real-Time Suggestion Model",
       cardText:
         "Adapts to price, emotion, and context — helping realtors close faster and smarter.",
@@ -192,7 +201,8 @@ const translation = {
     pt: {
       video: "assets/video/SynergyPort.mp4",
       title: "Symbiosis Autopilot™",
-      cardTitle: "Modelo de Sugestãoem Tempo Real",
+      create: "Crie sua extensão IA",
+      cardTitle: "Modelo de Sugestão em Tempo Real",
       cardText:
         "“Adapta-se ao preço, emoções do cliente e contexto da negociação — para que corretores fechem vendas com mais rapidez e inteligência.”",
       gradient: "Algoritmo de 75 caminhos",
@@ -211,6 +221,7 @@ const translation = {
     en: {
       video: "assets/video/ask.mp4",
       title: "Ask ORACIA",
+      create: "Create your AI extension",
       cardTitle: "Remove Any Doubt",
       cardText:
         "Instant answers on listings, prices, or property details — right when you need them.",
@@ -229,6 +240,7 @@ const translation = {
     pt: {
       video: "assets/video/askPort.mp4",
       title: "Seu Assistente de Negócios IA, Sempre Ativo",
+      create: "Crie sua extensão IA",
       cardTitle: "Tire Qualquer Dúvida",
       cardText:
         "“Respostas instantâneas sobre listagens, preços ou detalhes da propriedade — no momento exato que você precisa.”",
@@ -248,6 +260,7 @@ const translation = {
     en: {
       video: "assets/video/smart.mp4",
       title: "Smart-CRM",
+      create: "Create your AI extension",
       cardTitle: "Smart CRM",
       cardText:
         "Automatic updating in your sales funnel, lead status and notes",
@@ -265,6 +278,7 @@ const translation = {
     pt: {
       video: "assets/video/smartPort.mp4",
       title: "CRM Inteligente e Painel de Autocontrução",
+      create: "Crie sua extensão IA",
       cardTitle: "Smart CRM",
       cardText:
         "“Atualização automática em seu funil de vendas, status de leads e anotações”",
@@ -287,6 +301,7 @@ const langBtns = document.querySelectorAll("input[name='lang']");
 const textKeys = [
   "video",
   "title",
+  "create",
   "cardTitle",
   "cardText",
   "gradient",
@@ -300,6 +315,22 @@ const textKeys = [
   "crm",
 ];
 
+function updateSwitcherUI(lang) {
+  const enLabel = document.getElementById("english");
+  const ptLabel = document.getElementById("portuguese");
+
+  enLabel.classList.remove("active");
+  ptLabel.classList.remove("active");
+
+  if (lang === "pt") {
+    ptLabel.classList.add("active");
+    document.getElementById("portuguese").checked = true;
+  } else {
+    enLabel.classList.add("active");
+    document.getElementById("english").checked = true;
+  }
+}
+
 function updateLanguage(lang) {
   const currentVideo = videoId;
 
@@ -309,6 +340,7 @@ function updateLanguage(lang) {
       element.textContent = translation[currentVideo][lang][key];
     }
   });
+
   const newVideoSrc = translation[currentVideo][lang].video;
   if (newVideoSrc) {
     videoEl.src = newVideoSrc;
@@ -316,9 +348,17 @@ function updateLanguage(lang) {
     videoEl.load();
   }
 }
+
+const savedLang = localStorage.getItem("language") || "en";
+updateLanguage(savedLang);
+updateSwitcherUI(savedLang);
+
 langBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const lang = btn.id === "portuguese" ? "pt" : "en";
+
+    localStorage.setItem("language", lang);
     updateLanguage(lang);
+    updateSwitcherUI(lang);
   });
 });
