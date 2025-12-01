@@ -4,7 +4,6 @@ const data = {
     title: "Autopilot",
     create: "Create your AI extension",
     image: "/assets/images/brain.png",
-    mainicon: "/assets/icons/brainIcon.svg",
     cardTitle: "Advanced Negotiation Engine",
     cardText:
       "Never type again - Let AI handle client conversation autometicaly",
@@ -20,7 +19,6 @@ const data = {
     title: "Synergy 75x5",
     create: "Create your AI extension",
     image: "/assets/images/light.png",
-    mainicon: "/assets/icons/lightIcon.svg",
     cardTitle: "Real-Time Suggestion Model",
     cardText:
       "Adapts to price, emotion, and context — helping realtors close faster and smarter.",
@@ -37,7 +35,6 @@ const data = {
     title: "Ask ORACIA",
     create: "Create your AI extension",
     image: "/assets/images/question.png",
-    mainicon: "/assets/icons/questionIcon.svg",
     cardTitle: "Remove Any Doubt",
     cardText:
       "Instant answers on listings, prices, or property details — right when you need them.",
@@ -54,7 +51,6 @@ const data = {
     title: "Smart-CRM",
     create: "Create your AI extension",
     image: "/assets/images/smart.png",
-    mainicon: "/assets/icons/smartIcon.svg",
     cardTitle: "Smart CRM",
     cardText: "Automatic updating in your sales funnel, lead status and notes",
     gradient: "Automatic Updatest",
@@ -65,78 +61,6 @@ const data = {
     description: "More agility and precision in data filling",
   },
 };
-document.querySelectorAll(".video-card").forEach((card) => {
-  card.addEventListener("click", () => {
-    const id = card.dataset.id;
-    if (id) window.location = `video.html?video=${id}`;
-  });
-});
-
-function CurrentVideo(id) {
-  const change = data[id];
-  document.getElementById("card-title").textContent = change.title;
-  document.getElementById("main-image").src = change.image;
-
-  document.getElementById("big-card-title").textContent = change.cardTitle;
-  document.getElementById("create").textContent = change.create;
-  document.getElementById("big-card-text").textContent = change.cardText;
-  document.getElementById("middle-gradient").textContent = change.gradient;
-  document.getElementById("middle-icon").src = change.icon;
-  document.getElementById("middle-text").textContent = change.smallTitle;
-  document.getElementById("highlight").textContent = change.highlight;
-  document.getElementById("big-title").textContent = change.bigTitle;
-  document.getElementById("small-desc").textContent = change.description;
-}
-
-const params = new URLSearchParams(window.location.search);
-const videoId = params.get("video");
-CurrentVideo(videoId);
-
-document.querySelectorAll(".video-card").forEach((card) => {
-  if (card.dataset.id === videoId) {
-    card.classList.add("active");
-  } else {
-    card.classList.remove("active");
-  }
-});
-
-document
-  .querySelectorAll(".main-icon img")
-  .forEach((icon) => (icon.style.display = "none"));
-
-const iconMap = {
-  autopilot: "brain-icon",
-  synergy: "light-icon",
-  ask: "question-icon",
-  crm: "smart-icon",
-};
-
-const iconId = iconMap[videoId];
-if (iconId) document.getElementById(iconId).style.display = "block";
-const videos = {
-  autopilot: "assets/video/autopilot.mp4",
-  synergy: "assets/video/synergy.mp4",
-  ask: "assets/video/ask.mp4",
-  crm: "assets/video/smart.mp4",
-};
-const videoFile = videos[videoId];
-const videoEl = document.getElementById("video");
-const loader = document.getElementById("video-loader");
-const wrapper = document.getElementById("wrapper");
-const playIcon = document.getElementById("playIcon");
-
-videoEl.src = videoFile;
-
-videoEl.addEventListener("loadeddata", () => {
-  loader.classList.add("hidden");
-  wrapper.classList.remove("hidden");
-});
-
-playIcon.addEventListener("click", () => {
-  playIcon.style.display = "none";
-  videoEl.play();
-  videoEl.setAttribute("controls", true);
-});
 
 const translation = {
   autopilot: {
@@ -152,12 +76,7 @@ const translation = {
       highlight: "Performance",
       bigTitle: "Up to 90%",
       description: "Faster client respones time",
-      autopilot: "Autopilot",
-      synergy: "Synergy 75x5",
-      ask: "Ask ORACIA",
-      crm: "Smart-CRM",
     },
-
     pt: {
       video: "/assets/video/autopilotPort.mp4",
       title: "Como funciona o piloto automático",
@@ -171,35 +90,26 @@ const translation = {
       highlight: "Performance",
       bigTitle: "Aumento de 90%",
       description: "No tempo de resposta do cliente",
-      autopilot: "Como funciona o piloto automático",
-      synergy: "Symbiosis Autopilot™",
-      ask: "Seu Assistente de Negócios IA, Sempre Ativo",
-      crm: "CRM Inteligente e Painel de Autocontrução",
     },
   },
+
   synergy: {
     en: {
-      video: "assets/video/Synergy.mp4",
+      video: "assets/video/synergy.mp4",
       title: "Synergy 75x5",
       create: "Create your AI extension",
       cardTitle: "Real-Time Suggestion Model",
       cardText:
         "Adapts to price, emotion, and context — helping realtors close faster and smarter.",
       gradient: "75 Paths Engine",
-      icon: "assets/icons/star.svg",
       smallTitle:
         "Explores 75 negotiation routes, tests outcomes, and picks the one with highest success rate.",
       highlight: "Conversion",
       bigTitle: "Up to 3X",
       description: "Better deal-closing rate",
-      autopilot: "Autopilot",
-      synergy: "Synergy 75x5",
-      ask: "Ask ORACIA",
-      crm: "Smart-CRM",
     },
-
     pt: {
-      video: "assets/video/SynergyPort.mp4",
+      video: "assets/video/synergyPort.mp4",
       title: "Symbiosis Autopilot™",
       create: "Crie sua extensão IA",
       cardTitle: "Modelo de Sugestão em Tempo Real",
@@ -207,16 +117,13 @@ const translation = {
         "“Adapta-se ao preço, emoções do cliente e contexto da negociação — para que corretores fechem vendas com mais rapidez e inteligência.”",
       gradient: "Algoritmo de 75 caminhos",
       smallTitle:
-        "“Explora 75  estratégias de negociação, testa resultados e seleciona aquela com a maior taxa de sucesso.”",
+        "“Explora 75 estratégias de negociação, testa resultados e seleciona aquela com a maior taxa de sucesso.”",
       highlight: "Conversão",
       bigTitle: "Mais de 3X",
       description: "No fechamento de negócios",
-      autopilot: "Como funciona o piloto automático",
-      synergy: "Symbiosis Autopilot™",
-      ask: "Seu Assistente de Negócios IA, Sempre Ativo",
-      crm: "CRM Inteligente e Painel de Autocontrução",
     },
   },
+
   ask: {
     en: {
       video: "assets/video/ask.mp4",
@@ -231,12 +138,7 @@ const translation = {
       highlight: "Privacy First",
       bigTitle: "End-to-End",
       description: "Your workspace, your control",
-      autopilot: "Autopilot",
-      synergy: "Synergy 75x5",
-      ask: "Ask ORACIA",
-      crm: "Smart-CRM",
     },
-
     pt: {
       video: "assets/video/askPort.mp4",
       title: "Seu Assistente de Negócios IA, Sempre Ativo",
@@ -250,12 +152,9 @@ const translation = {
       highlight: "Privacidade em 1º lugar",
       bigTitle: "De Ponta a Ponta",
       description: "Seu ambiente de trabalho, seu controle",
-      autopilot: "Como funciona o piloto automático",
-      synergy: "Symbiosis Autopilot™",
-      ask: "Seu Assistente de Negócios IA, Sempre Ativo",
-      crm: "CRM Inteligente e Painel de Autocontrução",
     },
   },
+
   crm: {
     en: {
       video: "assets/video/smart.mp4",
@@ -269,12 +168,7 @@ const translation = {
       highlight: "Performance",
       bigTitle: "Up to 12x",
       description: "More agility and precision in data filling",
-      autopilot: "Autopilot",
-      synergy: "Synergy 75x5",
-      ask: "Ask ORACIA",
-      crm: "Smart-CRM",
     },
-
     pt: {
       video: "assets/video/smartPort.mp4",
       title: "CRM Inteligente e Painel de Autocontrução",
@@ -287,78 +181,90 @@ const translation = {
         "“Conversas → contatos, negócios, anotações—instantaneamente..”",
       highlight: "Performance",
       bigTitle: "Até 12x",
-      description: "Mais agilidade e precisão no  preenchimento de dados",
-      autopilot: "Como funciona o piloto automático",
-      synergy: "Symbiosis Autopilot™",
-      ask: "Seu Assistente de Negócios IA, Sempre Ativo",
-      crm: "CRM Inteligente e Painel de Autocontrução",
+      description: "Mais agilidade e precisão no preenchimento de dados",
     },
   },
 };
 
+const videoEl = document.getElementById("video");
+const loader = document.getElementById("video-loader");
+const wrapper = document.getElementById("wrapper");
+const playIcon = document.getElementById("playIcon");
 const langBtns = document.querySelectorAll("input[name='lang']");
 
-const textKeys = [
-  "video",
-  "title",
-  "create",
-  "cardTitle",
-  "cardText",
-  "gradient",
-  "smallTitle",
-  "highlight",
-  "bigTitle",
-  "description",
-  "autopilot",
-  "synergy",
-  "ask",
-  "crm",
-];
+function loadVideoData(id) {
+  const lang = localStorage.getItem("language") || "en";
+  const base = data[id];
+  const langData = translation[id][lang];
 
-function updateSwitcherUI(lang) {
-  const enLabel = document.getElementById("english");
-  const ptLabel = document.getElementById("portuguese");
+  if (!base) return;
 
-  enLabel.classList.remove("active");
-  ptLabel.classList.remove("active");
+  document.getElementById("card-title").textContent = langData.title;
+  document.getElementById("create").textContent = langData.create;
+  document.getElementById("big-card-title").textContent = langData.cardTitle;
+  document.getElementById("big-card-text").textContent = langData.cardText;
+  document.getElementById("middle-gradient").textContent = langData.gradient;
+  document.getElementById("middle-text").textContent = langData.smallTitle;
+  document.getElementById("highlight").textContent = langData.highlight;
+  document.getElementById("big-title").textContent = langData.bigTitle;
+  document.getElementById("small-desc").textContent = langData.description;
 
-  if (lang === "pt") {
-    ptLabel.classList.add("active");
-    document.getElementById("portuguese").checked = true;
-  } else {
-    enLabel.classList.add("active");
-    document.getElementById("english").checked = true;
-  }
-}
+  document.getElementById("main-image").src = base.image;
 
-function updateLanguage(lang) {
-  const currentVideo = videoId;
+  videoEl.src = langData.video;
+  videoEl.pause();
+  videoEl.load();
 
-  textKeys.forEach((key) => {
-    const element = document.querySelector(`[data-key="${key}"]`);
-    if (element && translation[currentVideo][lang][key]) {
-      element.textContent = translation[currentVideo][lang][key];
-    }
+  document
+    .querySelectorAll(".video-card")
+    .forEach((card) => card.classList.toggle("active", card.dataset.id === id));
+
+  document.querySelectorAll(".main-icon img").forEach((icon) => {
+    icon.style.display = "none";
   });
 
-  const newVideoSrc = translation[currentVideo][lang].video;
-  if (newVideoSrc) {
-    videoEl.src = newVideoSrc;
-    videoEl.pause();
-    videoEl.load();
-  }
+  const iconMap = {
+    autopilot: "brain-icon",
+    synergy: "light-icon",
+    ask: "question-icon",
+    crm: "smart-icon",
+  };
+  document.getElementById(iconMap[id]).style.display = "block";
 }
 
-const savedLang = localStorage.getItem("language") || "en";
-updateLanguage(savedLang);
-updateSwitcherUI(savedLang);
+document.querySelectorAll(".video-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    const id = card.dataset.id;
+    history.pushState({ video: id }, "", `?video=${id}`);
+    loadVideoData(id);
+  });
+});
 
 langBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const lang = btn.id === "portuguese" ? "pt" : "en";
 
     localStorage.setItem("language", lang);
-    updateLanguage(lang);
-    updateSwitcherUI(lang);
+
+    const params = new URLSearchParams(window.location.search);
+    const currentVideo = params.get("video") || "autopilot";
+
+    loadVideoData(currentVideo);
   });
+});
+
+const params = new URLSearchParams(window.location.search);
+const videoId = params.get("video") || "autopilot";
+
+loadVideoData(videoId);
+
+videoEl.addEventListener("loadeddata", () => {
+  loader.classList.add("hidden");
+  wrapper.classList.remove("hidden");
+});
+
+playIcon.addEventListener("click", () => {
+  playIcon.style.display = "none";
+  videoEl.play();
+  videoEl.setAttribute("controls", true);
 });

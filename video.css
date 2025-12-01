@@ -80,11 +80,10 @@ body {
   max-width: 60%;
 }
 .video {
-  width:99%;
+  width: 99%;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-  padding-left: 2%;
 }
 
 .lang-buttons {
@@ -258,7 +257,7 @@ body {
 }
 
 .card-image {
-  width: 190px;
+  width: 170px;
   min-height: 180px;
   max-height: 200px;
 }
@@ -280,14 +279,18 @@ body {
 }
 
 .video-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
   width: fit-content;
 }
 
 .image-video {
-  width: 98%;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+  width: 95%;
+  transition:
+    border 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .play-icon {
@@ -297,7 +300,9 @@ body {
   height: 40px;
   transform: translate(-50%, -50%);
   opacity: 0.9;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .video-card:hover .play-icon {
@@ -308,7 +313,7 @@ body {
 .video-label {
   font-size: 12px;
   font-weight: 400;
-  padding-left:5%;
+
   color: #3a3a3a;
   margin: 0;
   width: 80%;
@@ -318,7 +323,6 @@ body {
   border: 2px solid transparent;
   border-radius: 16px;
   overflow: hidden;
-  padding-left: 2%;
 }
 
 .video-card.active .image-video {
@@ -414,11 +418,14 @@ body {
 @media (min-width: 1001px) and (max-width: 1500px) {
   .video-carousel {
     width: 55%;
-    padding-left: 2%;
+  }
+  .lang-btn {
+    padding: 10px 17px;
+    font-size: 14px;
   }
 
   .image-video {
-    width: 70%;
+    width: 95%;
   }
   .play {
     width: 60px;
@@ -428,7 +435,7 @@ body {
   .global {
     width: 96%;
     padding: 0 2%;
-    height: 135px;
+    height: 90px;
     transition: all 0.3s ease;
   }
 
@@ -436,12 +443,14 @@ body {
     font-size: 11px;
   }
   .title {
-    width: 270px;
+    width: 320px;
+    font-size: 22px;
   }
   .top-row {
     padding: 10px 2%;
+    padding-top: 0;
     width: 100%;
-    max-width: 52%;
+    max-width: 50%;
     position: absolute;
     top: 0;
     left: 0;
@@ -482,7 +491,7 @@ body {
   }
 
   .big-card {
-    width: 240px;
+    width: 250px;
   }
 
   .middle-card {
@@ -506,7 +515,7 @@ body {
   }
 
   .image-video {
-    width: 90%;
+    width: 100%;
   }
   .play {
     width: 50px;
@@ -520,7 +529,7 @@ body {
 
   .top-row {
     padding: 10px 2%;
-    max-width: 320px;
+    max-width: 350px;
   }
 
   .card-text {
@@ -571,22 +580,26 @@ body {
 
   .lang-buttons {
     border-radius: 35px;
-    width: 100%;
     padding: 5px 1px;
     margin-top: 22px;
   }
   .lang-btn {
     padding: 5px 5px;
+    font-size: 11px;
   }
 
   .title {
     font-size: 22px;
   }
   .play-icon {
-    top: 30%;
+    top: 20%;
+    bottom: 20%;
     left: 50%;
     width: 20px;
     height: 20px;
+  }
+  .video-wrapper {
+    width: 95%;
   }
 }
 
@@ -605,12 +618,10 @@ body {
   .big-title {
     font-size: 16px;
   }
-  .video-wrapper {
-    width: 30px;
-  }
+
   .global {
     width: 96%;
-    height: 180px;
+    height: 100px;
   }
   .play {
     width: 40px;
@@ -684,7 +695,7 @@ body {
   }
 
   .title {
-    font-size: 22px;
+    font-size: 12px;
     width: 220px;
   }
   .play-icon {
