@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,62 +7,88 @@
     <title>Video Carousel</title>
   </head>
   <body>
-    <div class="global">
+    <div class="flex space global">
       <header>
-        <div class="top-row">
-          <h2 class="title-phrase">
-            <span class="title" id="card-title" data-key="title">Autopilot</span>
+        <div class="flex space top-row">
+          <h2 class="flex align-center title-phrase">
+            <span class="title" id="card-title" data-key="title"
+              >Autopilot</span
+            >
           </h2>
-          <div class="lang-buttons">
+          <div class="flex lang-buttons">
             <input type="radio" id="portuguese" name="lang" />
-            <label for="portuguese" class="lang-btn">Portuguese 🇧🇷</label>
+            <label for="portuguese" class="flex align-center lang-btn"
+              >Português 🇧🇷</label
+            >
 
             <input type="radio" id="english" name="lang" checked />
-            <label for="english" class="lang-btn">English 🇺🇸</label>
+            <label for="english" class="flex align-center lang-btn"
+              >English 🇺🇸</label
+            >
           </div>
         </div>
       </header>
-
-      <div class="vertical-line"></div>
-
-      <section class="right-panel">
+      <div class="fixed vertical-line"></div>
+      <section class="flex direction right-panel">
         <img src="assets/images/name.png" alt="name" class="main-name" />
 
-        <div class="qr-card">
-          <img src="assets/images/qr.png" alt="QR code" class="qr-image" />
+        <div class="flex center qr-card">
+          <img
+            src="assets/images/qr.png"
+            alt="QR code"
+            class="center qr-image"
+          />
         </div>
 
-        <div class="cards-container">
-          <div class="card big-card">
+        <h3 class="ai-text" id="create" data-key="create"></h3>
+
+        <div class="grid cards-container">
+          <div class="card flex direction big-card">
             <h2 class="card-title">
               <span class="gradient" id="big-card-title" data-key="cardTitle"
                 >Advanced Negotiation Engine</span
               >
             </h2>
-            <div class="image-icon">
-            <img
-           
-              alt="brain"
-              class="card-image"
-              id="main-image"
-            />
-           
-            <div class="main-icon">
-              <img id="brain-icon" class="brain-icon" id="brain-icon" src="assets/icons/brainIcon.svg" alt="brain icon" />
-              <img id="light-icon" class="light-icon" id="light-icon" src="assets/icons/lightIcon.svg" alt="light icon" />
-              <img id="question-icon" class="question-icon"  id="question-icon" src="assets/icons/questionIcon.svg" alt="question icon" />
-              <img id="smart-icon" class="smart-icon" id="smart-icon" src="assets/icons/smartIcon.svg" alt="smart icon" />
+            <div class="relative image-icon">
+              <img alt="brain" class="card-image" id="main-image" />
+
+              <div class="main-icon">
+                <img
+                  id="brain-icon"
+                  class="absolute brain-icon"
+                  id="brain-icon"
+                  src="assets/icons/brainIcon.svg"
+                  alt="brain icon"
+                />
+                <img
+                  id="light-icon"
+                  class="absolute light-icon"
+                  id="light-icon"
+                  src="assets/icons/lightIcon.svg"
+                  alt="light icon"
+                />
+                <img
+                  id="question-icon"
+                  class="absolute question-icon"
+                  id="question-icon"
+                  src="assets/icons/questionIcon.svg"
+                  alt="question icon"
+                />
+                <img
+                  id="smart-icon"
+                  class="absolute smart-icon"
+                  id="smart-icon"
+                  src="assets/icons/smartIcon.svg"
+                  alt="smart icon"
+                />
+              </div>
             </div>
-            
-
-
-          </div>
             <p class="card-text" id="big-card-text" data-key="cardText">
-            Never type again - Let AI handle client conversation autometicaly
+              Never type again - Let AI handle client conversation autometicaly
             </p>
           </div>
 
-          <div class="card middle-card">
+          <div class="card flex direction middle-card">
             <h3 class="small-title">
               <span class="gradient" id="middle-gradient" data-key="gradient"
                 >Smart Suggestion Engine</span
@@ -74,15 +100,19 @@
               class="small-icon"
               id="middle-icon"
             />
-            <p class="small-text" id="middle-text" data-key="smallTitle"> 
+            <p class="small-text" id="middle-text" data-key="smallTitle">
               Predictive property suggestion based on client intent
             </p>
           </div>
 
-          <div class="card small-card">
-            <p class="highlight" id="highlight" data-key="highlight">Performance</p>
+          <div class="card flex direction small-card">
+            <p class="highlight" id="highlight" data-key="highlight">
+              Performance
+            </p>
             <h3 class="gradient">
-              <span class="big-title" id="big-title" data-key="bigTitle">Up to 90%</span>
+              <span class="big-title" id="big-title" data-key="bigTitle"
+                >Up to 90%</span
+              >
             </h3>
             <p class="discription" id="small-desc" data-key="description">
               Faster client respones time
@@ -92,48 +122,98 @@
       </section>
     </div>
 
-    <section class="main-video">
-      <img
-        src="assets/images/main-video.png"
-        alt="video-preview"
-        class="video"
-      />
+    <section id="video-container">
+      <div id="video-loader" class="loader-container">
+        <div class="spinner"></div>
+        <p>Loading video...</p>
+      </div>
+
+      <div id="wrapper" class="relative wrapper hidden">
+        <video
+          class="video"
+          id="video"
+          data-key="video"
+          playsinline
+          muted
+        ></video>
+        <img
+          src="assets/icons/playIcon.svg"
+          id="playIcon"
+          class="absolute play"
+        />
+      </div>
     </section>
 
-    <section class="video-carousel">
-      <div class="video-card" data-title="autopilot" data-id="autopilot">
-        <div class="video-wrapper">
-          <img src="assets/images/videoImage.png" alt="video" class="image-video"/>
-          <img src="assets/icons/playIcon.svg" alt="play" class="play-icon" />
+    <section class="flex space video-carousel">
+      <div
+        class="relative video-card"
+        data-title="autopilot"
+        data-id="autopilot"
+      >
+        <div class="flex content-center video-wrapper">
+          <img
+            src="assets/images/videoImage.png"
+            alt="video"
+            class="image-video"
+          />
+
+          <img
+            src="assets/icons/playIcon.svg"
+            alt="play"
+            class="absolute play-icon"
+          />
         </div>
-        <p class="video-label" data-key="autopilot" >Autopilot</p>
+        <p class="video-label" data-key="autopilot">Autopilot</p>
       </div>
-    
-      <div class="video-card" data-title="synergy" data-id="synergy">
-        <div class="video-wrapper">
-          <img src="assets/images/videoImage.png" alt="video" class="image-video" />
-          <img src="assets/icons/playIcon.svg" alt="play" class="play-icon" />
+
+      <div class="relative video-card" data-title="synergy" data-id="synergy">
+        <div class="flex content-center video-wrapper">
+          <img
+            src="assets/images/videoImage.png"
+            alt="video"
+            class="image-video"
+          />
+          <img
+            src="assets/icons/playIcon.svg"
+            alt="play"
+            class="absolute play-icon"
+          />
         </div>
         <p class="video-label" data-key="synergy">Synergy 75x5</p>
       </div>
-    
-      <div class="video-card" data-title="ask" data-id="ask">
-        <div class="video-wrapper">
-          <img src="assets/images/videoImage.png" alt="video" class="image-video" />
-          <img src="assets/icons/playIcon.svg" alt="play" class="play-icon" />
+
+      <div class="relative video-card" data-title="ask" data-id="ask">
+        <div class="flex content-center video-wrapper">
+          <img
+            src="assets/images/videoImage.png"
+            alt="video"
+            class="image-video"
+          />
+          <img
+            src="assets/icons/playIcon.svg"
+            alt="play"
+            class="absolute play-icon"
+          />
         </div>
         <p class="video-label" data-key="ask">Ask ORACIA</p>
       </div>
-    
-      <div class="video-card" data-title="crm" data-id="crm">
-        <div class="video-wrapper">
-          <img src="assets/images/videoImage.png" alt="video" class="image-video" />
-          <img src="assets/icons/playIcon.svg" alt="play" class="play-icon" />
+
+      <div class="relative video-card" data-title="crm" data-id="crm">
+        <div class="flex content-center video-wrapper">
+          <img
+            src="assets/images/videoImage.png"
+            alt="video"
+            class="image-video"
+          />
+          <img
+            src="assets/icons/playIcon.svg"
+            alt="play"
+            class="absolute play-icon"
+          />
         </div>
         <p class="video-label">Smart-CRM</p>
       </div>
     </section>
-    
-      <script src="video.js"></script>
+    <script src="video.js"></script>
   </body>
 </html>

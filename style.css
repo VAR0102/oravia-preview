@@ -3,29 +3,58 @@
 :root {
   --text-color: #3d3d3d;
 }
+.flex {
+  display: flex;
+}
+
+.content-start {
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.content-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.space {
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
 body {
   background-image: url("assets/images/bgImage.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; 
+  background-attachment: fixed;
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   color: var(--text-color);
+}
 
+.relative {
+  position: relative;
+}
 
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.align-center {
+  align-items: center;
 }
 
 .top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   padding: 20px;
-  padding-left: 0;
+  padding-left: 3%;
   height: 50px;
-
+  gap: 150px;
 }
 
 .title-phrase {
@@ -35,7 +64,6 @@ body {
   margin-top: 5px;
   width: max-content;
   padding-left: 10%;
-  display: flex;
   gap: 10px;
 }
 
@@ -63,12 +91,9 @@ body {
 }
 
 .video-card {
-  display: flex;
   flex-direction: column;
-  position: relative;
 }
 .video-wrapper {
-  position: relative;
   display: inline-block;
 }
 
@@ -88,7 +113,6 @@ body {
 }
 
 .play-icon {
-  position: absolute;
   top: 50%;
   left: 50%;
   width: 80px;
@@ -96,7 +120,9 @@ body {
   transform: translate(-50%, -50%);
   opacity: 0.85;
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 .play-icon:hover {
   transform: translate(-50%, -50%) scale(1.1);
@@ -104,24 +130,16 @@ body {
 }
 
 .right-panel {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 15px;
   width: 40%;
 }
 
 .qr-card {
   background-color: #f9e7e7;
-  padding-left: 90px;
-  padding-right: 90px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 90px;
   border-radius: 20px;
   border: 1px solid #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .qr-image {
@@ -137,21 +155,22 @@ body {
 }
 
 .lang-buttons {
-  display: flex;
   gap: 16px;
   margin-top: 50px;
   background-color: white;
-  padding: 9px 15px;
+  padding: 8px;
   border-radius: 25px;
 }
 
+.lang-btn {
+  font-size: 14px;
+  padding: 8px 12px;
+}
 .lang-buttons input[type="radio"] {
   display: none;
 }
 
 .lang-btn {
-  display: flex;
-  align-items: center;
   border: none;
   border-radius: 25px;
   padding: 10px 17px;
@@ -177,7 +196,6 @@ body {
 }
 
 .vertical-line {
-  position: fixed;
   top: 0;
   bottom: 0;
   right: 40%;
@@ -189,10 +207,15 @@ body {
 @media (min-width: 1001px) and (max-width: 1500px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    gap: 26px;
     width: 55%;
+    margin-top: 12px;
   }
-
+  .right-panel {
+    flex-direction: column;
+    gap: 15px;
+    width: 20%;
+  }
   .gallery .image-video {
     width: 100%;
   }
@@ -202,22 +225,26 @@ body {
     height: 60px;
   }
 
-  .right-panel {
-    width: 100%;
-    gap: 10px;
+  .top-row {
+    padding: 20px;
+    padding-left: 0;
+    width: 90%;
+    gap: 0px;
+  }
+
+  .title-phrase {
+    width: 98%;
+    font-size: 24px;
   }
 
   .qr-card {
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 40px 70px;
     border-radius: 16px;
   }
 
   .qr-image {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
   }
 
   .create-text {
@@ -229,7 +256,6 @@ body {
     gap: 10px;
     padding: 6px 12px;
     margin-top: 30px;
-    min-width: max-content;
   }
 
   .lang-btn {
@@ -250,8 +276,8 @@ body {
     gap: 25px;
     width: 50%;
     min-width: 300px;
-    margin-top: 30px;
   }
+
   .en-phrase {
     font-size: 20px;
   }
@@ -260,7 +286,7 @@ body {
     font-size: 20px;
   }
   .title-phrase {
-    max-width: 80%;
+    max-width: 90%;
   }
 
   .gallery .image-video {
@@ -273,27 +299,19 @@ body {
   }
 
   .right-panel {
-    width: 99%;
-    gap: 10px;
     padding: 0;
+    width:1px;
   }
-  .gallery-title {
-    width: 60%;
-  }
+
   .top-row {
-    display: flex;
-    justify-content: start;
-    align-items: flex-start;
-    padding: 20px;
+    padding: 0;
     padding-left: 0;
     height: 50px;
+    width: 80%;
   }
 
   .qr-card {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 10px;
     border-radius: 16px;
   }
 
@@ -313,7 +331,13 @@ body {
     margin-top: 30px;
     min-width: max-content;
   }
-
+  .gallery-title {
+    width: 100%;
+  }
+  .title-phrase {
+    font-size: 14px;
+    padding-left: 0;
+  }
   .lang-btn {
     font-size: 14px;
     padding: 8px 12px;
@@ -328,7 +352,6 @@ body {
     gap: 25px;
     width: 40%;
     min-width: 10px;
-    margin-top: 100px;
   }
   .en-phrase {
     font-size: 20px;
@@ -340,6 +363,7 @@ body {
   .title-phrase {
     max-width: 80%;
     padding-left: 3%;
+    font-size: 12px;
   }
 
   .gallery .image-video {
@@ -360,19 +384,14 @@ body {
     width: 60%;
   }
   .top-row {
-    display: flex;
-    justify-content: start;
-    align-items: flex-start;
     padding: 20px;
     padding-left: 0;
     height: 50px;
+    width: 60%;
   }
 
   .qr-card {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 10px;
     border-radius: 16px;
   }
 
@@ -388,7 +407,7 @@ body {
 
   .lang-buttons {
     gap: 10px;
-    padding: 2px 2px;
+    padding: 2px;
     margin-top: 30px;
     min-width: max-content;
   }
@@ -441,19 +460,13 @@ body {
     width: 60%;
   }
   .top-row {
-    display: flex;
-    justify-content: start;
-    align-items: flex-start;
     padding: 20px;
     padding-left: 0;
     height: 50px;
   }
 
   .qr-card {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 10px;
     border-radius: 16px;
   }
 
@@ -466,7 +479,6 @@ body {
     font-size: 16px;
     min-width: max-content;
   }
-
 
   .vertical-line {
     right: 53%;
