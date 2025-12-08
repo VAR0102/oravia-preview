@@ -233,8 +233,11 @@ body {
   }
 
   .title-phrase {
-    width: 98%;
+    width: 100%;
     font-size: 24px;
+  }
+  .title-phrase.pt-small {
+    font-size: 20px;
   }
 
   .qr-card {
@@ -300,7 +303,7 @@ body {
 
   .right-panel {
     padding: 0;
-    width:1px;
+    width: 1px;
   }
 
   .top-row {
@@ -333,6 +336,8 @@ body {
   }
   .gallery-title {
     width: 100%;
+    padding-left: 50px;
+    padding-top: 6px;
   }
   .title-phrase {
     font-size: 14px;
@@ -344,6 +349,9 @@ body {
   }
   .vertical-line {
     right: 42%;
+  }
+  .title-phrase.pt-small {
+    font-size: 10px;
   }
 }
 @media (min-width: 481px) and (max-width: 599px) {
