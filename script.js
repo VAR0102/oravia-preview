@@ -32,6 +32,12 @@ function changeLang(lang) {
 
   document.getElementById("qr-img").src =
     lang === "pt" ? "assets/images/QrCode.png" : "assets/images/qr.png";
+  const title = document.querySelector(".title-phrase");
+  if (lang === "pt") {
+    title.classList.add("pt-small");
+  } else {
+    title.classList.remove("pt-small");
+  }
 }
 document
   .getElementById("english")

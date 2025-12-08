@@ -76,6 +76,7 @@ const translation = {
       highlight: "Performance",
       bigTitle: "Up to 90%",
       description: "Faster client respones time",
+      autopilot: "Autopilot",
     },
     pt: {
       video: "/assets/video/autopilotPort.mp4",
@@ -90,6 +91,7 @@ const translation = {
       highlight: "Performance",
       bigTitle: "Aumento de 90%",
       description: "No tempo de resposta do cliente",
+      autopilot: "Como funciona o piloto automático",
     },
   },
 
@@ -208,7 +210,6 @@ function loadVideoData(id) {
   document.getElementById("highlight").textContent = langData.highlight;
   document.getElementById("big-title").textContent = langData.bigTitle;
   document.getElementById("small-desc").textContent = langData.description;
-
   document.getElementById("main-image").src = base.image;
 
   videoEl.src = langData.video;
@@ -243,6 +244,9 @@ document.querySelectorAll(".video-card").forEach((card) => {
 langBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const lang = btn.id === "portuguese" ? "pt" : "en";
+    const titleEl = document.getElementById("card-title");
+    if (lang === "pt") titleEl.classList.add("pt-small");
+    else titleEl.classList.remove("pt-small");
 
     localStorage.setItem("language", lang);
 
