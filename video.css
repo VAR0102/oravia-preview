@@ -42,7 +42,6 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  padding-top: 0;
   height: auto;
 }
 .relative {
@@ -67,13 +66,14 @@ body {
 }
 
 .global {
-  height: 100px;
+  height: 80px;
   width: 94%;
 }
 
 .title {
   font-size: 25px;
   font-weight: 400;
+  padding-left: 10px;
 }
 
 .title-phrase {
@@ -81,16 +81,20 @@ body {
 }
 .video {
   width: 99%;
+  margin-left: 20px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+#main-title.pt-small {
+  font-size: 23px;
 }
 
 .lang-buttons {
   background-color: white;
   border-radius: 35px;
   padding: 8px;
-  margin-top: 22px;
 }
 
 .lang-buttons input[type="radio"] {
@@ -171,7 +175,7 @@ body {
 }
 .small-card {
   max-width: 300px;
-  min-height: 120px;
+  min-height: 125px;
   height: fit-content;
   max-height: 80%;
 }
@@ -206,8 +210,8 @@ body {
 .card-text {
   font-size: 10px;
   color: #6f6f6f;
-padding: 0  10px 0x 10px ;
-width:90%;
+  padding: 0 10px 0x 10px;
+  width: 90%;
   max-width: 100%;
   margin: 0;
 }
@@ -216,9 +220,8 @@ width:90%;
   font-size: 16px;
   font-weight: 500;
   color: #3f3f3f;
-  margin-bottom: 10px;
-  margin: 0;
-  margin-top: 15px;
+
+  margin: 15px 0 10px 0;
 }
 
 .small-icon {
@@ -277,21 +280,13 @@ width:90%;
 
 .video-carousel {
   width: 60%;
+  margin-left: 15px;
 }
 
 .video-card {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   width: fit-content;
-}
-
-.image-video {
-  width: 95%;
-  transition:
-    border 0.3s ease,
-    box-shadow 0.3s ease;
 }
 
 .play-icon {
@@ -301,9 +296,7 @@ width:90%;
   height: 40px;
   transform: translate(-50%, -50%);
   opacity: 0.9;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .video-card:hover .play-icon {
@@ -314,21 +307,18 @@ width:90%;
 .video-label {
   font-size: 12px;
   font-weight: 400;
-
   color: #3a3a3a;
   margin: 0;
-  width: 80%;
+  padding-left: 4%;
 }
 .video-wrapper {
   width: 80%;
-  border: 2px solid transparent;
-  border-radius: 16px;
   overflow: hidden;
 }
 
 .video-card.active .image-video {
-  border: 2px solid transparent;
-  border-image-source: linear-gradient(
+  border-radius: 6px;
+  background: linear-gradient(
     92.35deg,
     #a59fc3 -94.27%,
     #542b81 -42.42%,
@@ -336,7 +326,9 @@ width:90%;
     #f3a199 81.78%,
     #faf6e8 127.6%
   );
-  border-image-slice: 1;
+}
+.image-video {
+  width: 90%;
 }
 
 .brain-icon {
@@ -418,7 +410,7 @@ width:90%;
 
 @media (min-width: 1001px) and (max-width: 1500px) {
   .video-carousel {
-    width: 55%;
+    width: 50%;
   }
   .lang-btn {
     padding: 10px 17px;
@@ -426,7 +418,7 @@ width:90%;
   }
 
   .image-video {
-    width: 95%;
+    width: 90%;
   }
   .play {
     width: 60px;
@@ -436,7 +428,7 @@ width:90%;
   .global {
     width: 96%;
     padding: 0 2%;
-    height: 90px;
+    height: 65px;
     transition: all 0.3s ease;
   }
 
@@ -447,9 +439,21 @@ width:90%;
     width: 320px;
     font-size: 22px;
   }
+
+  #main-title.pt-small {
+    font-size: 16px;
+  }
+  .lang-buttons {
+    margin-top: 10px;
+    padding: 8px;
+  }
+  .lang-btn {
+    font-size: 10px;
+    padding: 8px 12px;
+  }
+
   .top-row {
-    padding: 10px 2%;
-    padding-top: 0;
+    padding: 0 10px 2%;
     width: 100%;
     max-width: 50%;
     position: absolute;
@@ -478,21 +482,21 @@ width:90%;
 
   .qr-card {
     background-color: #f9e7e7;
-    padding: 1px 70px;
+    padding: 1px 100px;
     border-radius: 20px;
     border: 1px solid #ffffff;
   }
 
   .cards-container {
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: 1fr 180px;
     grid-template-rows: 1fr 1fr;
     gap: 20px;
-    max-width: 100%;
+    max-width: 90%;
     height: 1px;
   }
 
   .big-card {
-    width: 250px;
+    width: 240px;
   }
 
   .middle-card {
@@ -504,6 +508,15 @@ width:90%;
   .big-title {
     font-size: 16px;
   }
+  .gradient {
+    font-size: 12px;
+  }
+  .card-text {
+    font-size: 9px;
+  }
+  .highlight {
+    font-size: 13px;
+  }
 }
 
 @media (min-width: 800px) and (max-width: 1001px) {
@@ -514,7 +527,9 @@ width:90%;
   .big-title {
     font-size: 16px;
   }
-
+  .gradient {
+    font-size: 14px;
+  }
   .image-video {
     width: 100%;
   }
@@ -525,7 +540,7 @@ width:90%;
   }
   .global {
     width: 96%;
-    height: 130px;
+    height: 70px;
   }
 
   .top-row {
@@ -559,11 +574,11 @@ width:90%;
   }
 
   .qr-card {
-    padding: 1px 40px;
+    padding: 1px 70px;
   }
 
   .cards-container {
-    grid-template-columns: 1fr 190px;
+    grid-template-columns: 1fr 140px;
     max-width: 100%;
     height: 1px;
   }
@@ -573,7 +588,7 @@ width:90%;
   }
 
   .middle-card {
-    max-width: 150px;
+    max-width: 200px;
   }
   .small-card {
     max-width: 150px;
@@ -581,19 +596,23 @@ width:90%;
 
   .lang-buttons {
     border-radius: 35px;
-    padding: 5px 1px;
+    padding: 1px 1px;
     margin-top: 22px;
   }
   .lang-btn {
     padding: 5px 5px;
-    font-size: 11px;
+    font-size: 9px;
   }
 
   .title {
     font-size: 22px;
   }
+  #main-title.pt-small {
+    font-size: 13.5px;
+    width: 400px;
+  }
   .play-icon {
-    top: 20%;
+    top: 30%;
     bottom: 20%;
     left: 50%;
     width: 20px;
@@ -602,7 +621,7 @@ width:90%;
   .video-wrapper {
     width: 95%;
   }
-  .discription{
+  .discription {
     font-size: 10px;
   }
 }
@@ -611,6 +630,9 @@ width:90%;
   .video-carousel {
     width: 1px;
     padding-left: 0;
+  }
+  .gradient {
+    font-size: 14px;
   }
 
   .image-video {
@@ -624,7 +646,6 @@ width:90%;
   }
 
   .global {
-    width: 96%;
     height: 100px;
   }
   .play {
@@ -637,10 +658,15 @@ width:90%;
     display: grid;
     padding: 10px 2%;
     width: 40%;
-    max-width: 600px;
+    max-width: 220px;
   }
   .title-phrase {
     margin: 0;
+  }
+
+  #main-title.pt-small {
+    font-size: 13.5px;
+    width: 400px;
   }
   .card-text {
     padding: 0;
@@ -654,7 +680,9 @@ width:90%;
   .video {
     width: 55%;
   }
-
+  .wrapper {
+    width: 40%;
+  }
   .vertical-line {
     position: absolute;
     right: 63%;
@@ -662,7 +690,7 @@ width:90%;
   }
   .right-panel {
     gap: 15px;
-    width: 57%;
+    width:100%;
     padding: 0;
     margin-top: 1%;
   }
@@ -690,12 +718,12 @@ width:90%;
 
   .lang-buttons {
     border-radius: 35px;
-    padding: 5px;
+    padding: 1px;
     margin-top: 5px;
-    width: 60%;
+    max-width: 40%;
   }
   .lang-btn {
-    padding: 5px 5px;
+    font-size: 7px;
   }
 
   .title {
@@ -712,10 +740,10 @@ width:90%;
     padding: 2px 2px;
     font-size: 10px;
   }
-   .discription{
+  .discription {
     font-size: 10px;
   }
-  .small-text{
+  .small-text {
     font-size: 10px;
   }
 }
@@ -754,19 +782,23 @@ width:90%;
 
   .global {
     width: 96%;
-    height: 130px;
+    height: 100px;
   }
 
   .top-row {
     display: grid;
     padding: 5px 2%;
     width: 40%;
-    max-width: 600px;
+    max-width: 100px;
+  }
+  #main-title.pt-small {
+    font-size: 12px;
+    width: 200px;
   }
 
   .video {
-    width: 40%;
-    height: 100px;
+    width:40%;
+    margin: 0;
   }
 
   .vertical-line {
@@ -829,11 +861,14 @@ width:90%;
     width: 10px;
     height: 10px;
   }
-   .discription{
+  .discription {
     font-size: 10px;
   }
-  .small-text{
+  .small-text {
     font-size: 10px;
+  }
+  .gradient{
+font-size: 10px;
   }
 }
 
@@ -845,6 +880,9 @@ width:90%;
   .big-title {
     font-size: 16px;
   }
+  .gradient {
+    font-size: 14px;
+  }
   .image-video {
     width: 100%;
   }
@@ -852,11 +890,10 @@ width:90%;
   .video-label {
     font-size: 5px;
   }
-  .main-image{
+  .main-image {
     width: 1px;
     height: 1px;
   }
-
 
   .card-text {
     padding: 0;
@@ -886,7 +923,7 @@ width:90%;
     width: 10px;
     height: 10px;
   }
-.small-text{
+  .small-text {
     font-size: 10px;
   }
   .video {
@@ -946,7 +983,7 @@ width:90%;
   .title {
     font-size: 16px;
   }
-   .discription{
+  .discription {
     font-size: 10px;
   }
 }
@@ -956,14 +993,16 @@ width:90%;
     width: 5%;
     display: grid;
   }
-
+  .gradient {
+    font-size: 14px;
+  }
   .big-title {
     font-size: 12px;
   }
-.card-image{
-  width: 10px;
-  height: 10px;
-}
+  .card-image {
+    width: 10px;
+    height: 10px;
+  }
 
   .image-video {
     padding-left: 10%;
@@ -1060,10 +1099,10 @@ width:90%;
   .title {
     font-size: 8px;
   }
-   .discription{
+  .discription {
     font-size: 10px;
   }
-  .small-text{
+  .small-text {
     font-size: 10px;
   }
 }

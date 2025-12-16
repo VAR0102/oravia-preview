@@ -65,7 +65,7 @@ const data = {
 const translation = {
   autopilot: {
     en: {
-      video: "/assets/video/autopilot.mp4",
+      video: "https://pub-b944cbd61027465d8855762e66f17d15.r2.dev/chat-videos-updated/English/Symbiotic%20Broker.mov",
       title: "Autopilot",
       create: "Create your AI extension",
       cardTitle: "Advanced Negotiation Engine",
@@ -76,9 +76,10 @@ const translation = {
       highlight: "Performance",
       bigTitle: "Up to 90%",
       description: "Faster client respones time",
+      autopilot: "Autopilot",
     },
     pt: {
-      video: "/assets/video/autopilotPort.mp4",
+      video: "https://pub-b944cbd61027465d8855762e66f17d15.r2.dev/chat-videos-updated/Protogise/auto%20pailot.28.35_1.mov",
       title: "Como funciona o piloto automático",
       create: "Crie sua extensão IA",
       cardTitle: "Modelo de Negociação Avançada",
@@ -90,12 +91,13 @@ const translation = {
       highlight: "Performance",
       bigTitle: "Aumento de 90%",
       description: "No tempo de resposta do cliente",
+      autopilot: "Como funciona o piloto automático",
     },
   },
 
   synergy: {
     en: {
-      video: "assets/video/synergy.mp4",
+      video: "https://pub-b944cbd61027465d8855762e66f17d15.r2.dev/chat-videos-updated/English/Synergy%2075x5%E2%84%A2.mov",
       title: "Synergy 75x5",
       create: "Create your AI extension",
       cardTitle: "Real-Time Suggestion Model",
@@ -109,7 +111,7 @@ const translation = {
       description: "Better deal-closing rate",
     },
     pt: {
-      video: "assets/video/synergyPort.mp4",
+      video: "https://pub-b944cbd61027465d8855762e66f17d15.r2.dev/chat-videos-updated/Protogise/Synergy%2075x5%2023.28.35_1.mov",
       title: "Symbiosis Autopilot™",
       create: "Crie sua extensão IA",
       cardTitle: "Modelo de Sugestão em Tempo Real",
@@ -126,7 +128,7 @@ const translation = {
 
   ask: {
     en: {
-      video: "assets/video/ask.mp4",
+      video: "https://pub-456232381c13400b892e85cb4305c84d.r2.dev/ask-oracia-en/Ask%20oracia%20final%20design.mov",
       title: "Ask ORACIA",
       create: "Create your AI extension",
       cardTitle: "Remove Any Doubt",
@@ -140,7 +142,7 @@ const translation = {
       description: "Your workspace, your control",
     },
     pt: {
-      video: "assets/video/askPort.mp4",
+      video: "https://pub-456232381c13400b892e85cb4305c84d.r2.dev/ask-oracia-pt/Ask%20oracia%20PT.mp4",
       title: "Seu Assistente de Negócios IA, Sempre Ativo",
       create: "Crie sua extensão IA",
       cardTitle: "Tire Qualquer Dúvida",
@@ -157,7 +159,7 @@ const translation = {
 
   crm: {
     en: {
-      video: "assets/video/smart.mp4",
+      video: "https://pub-456232381c13400b892e85cb4305c84d.r2.dev/smart-crm-en/last%20final%20for%20smart%20crm%20english.mov",
       title: "Smart-CRM",
       create: "Create your AI extension",
       cardTitle: "Smart CRM",
@@ -170,7 +172,7 @@ const translation = {
       description: "More agility and precision in data filling",
     },
     pt: {
-      video: "assets/video/smartPort.mp4",
+      video: "https://pub-456232381c13400b892e85cb4305c84d.r2.dev/smart-crm-pt/Smart%20CRM%20Portogise.mov",
       title: "CRM Inteligente e Painel de Autocontrução",
       create: "Crie sua extensão IA",
       cardTitle: "Smart CRM",
@@ -191,15 +193,47 @@ const loader = document.getElementById("video-loader");
 const wrapper = document.getElementById("wrapper");
 const playIcon = document.getElementById("playIcon");
 const langBtns = document.querySelectorAll("input[name='lang']");
+function loadVideoWithPromise(src) {
+  return new Promise((resolve, reject) => {
+    loader.classList.remove("hidden");
+    wrapper.classList.add("hidden");
+
+    videoEl.pause();
+    videoEl.removeAttribute("controls");
+    playIcon.style.display = "block";
+
+    videoEl.src = src;
+    videoEl.load();
+
+    const onLoaded = () => {
+      cleanup();
+      resolve();
+    };
+
+    const onError = () => {
+      cleanup();
+      reject("Video failed to load");
+    };
+
+    function cleanup() {
+      videoEl.removeEventListener("loadeddata", onLoaded);
+      videoEl.removeEventListener("error", onError);
+    }
+
+    videoEl.addEventListener("loadeddata", onLoaded);
+    videoEl.addEventListener("error", onError);
+  });
+}
+
 
 function loadVideoData(id) {
   const lang = localStorage.getItem("language") || "en";
   const base = data[id];
   const langData = translation[id][lang];
 
-  if (!base) return;
-
-  document.getElementById("card-title").textContent = langData.title;
+  if (!base || !langData) return;
+  
+  document.getElementById("main-title").textContent = langData.title;
   document.getElementById("create").textContent = langData.create;
   document.getElementById("big-card-title").textContent = langData.cardTitle;
   document.getElementById("big-card-text").textContent = langData.cardText;
@@ -208,12 +242,12 @@ function loadVideoData(id) {
   document.getElementById("highlight").textContent = langData.highlight;
   document.getElementById("big-title").textContent = langData.bigTitle;
   document.getElementById("small-desc").textContent = langData.description;
-
   document.getElementById("main-image").src = base.image;
 
   videoEl.src = langData.video;
   videoEl.pause();
   videoEl.load();
+  
 
   document
     .querySelectorAll(".video-card")
@@ -243,6 +277,9 @@ document.querySelectorAll(".video-card").forEach((card) => {
 langBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const lang = btn.id === "portuguese" ? "pt" : "en";
+    const titleEl = document.getElementById("main-title"); 
+   if (lang === "pt") titleEl.classList.add("pt-small");
+    else titleEl.classList.remove("pt-small");
 
     localStorage.setItem("language", lang);
 
